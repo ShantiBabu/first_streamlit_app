@@ -67,7 +67,7 @@ def get_fruit_load_list():
         with my_cnx.cursor() as my_cur:
             my_cur.execute("select * from fruit_load_list")
             return my_cur.fetchall()
-streamlit.stop()        
+  
 #import snowflake.connector
 # Add a button to load the fruti
 if streamlit.button('Get Fruit List'):
@@ -81,7 +81,7 @@ streamlit.header("The fruit load list contains")
 streamlit.dataframe(my_data_rows)
 
 # Allow the end user to add a fruit to the list
-
+streamlit.stop()
 def insert_row_snowflake(new_fruit):
         with my_cnx.cursor() as my_cur:
                 my_cur.execute("insert into fruit_load_list_values('" + new_fruit + "')")
