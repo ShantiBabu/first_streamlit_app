@@ -35,7 +35,7 @@ def get_fruityvice_data(this_fruit_choice):
 #New Section to display Fruityvice api response
 streamlit.header("View Our Fruit List - Add Your Favorites!")
 try:
-  fruit_choice = streamlit.text_input('Get Fruit List')
+  fruit_choice = streamlit.text_input('Get Fruit Information')
   if not fruit_choice:
       streamlit.error("Please select a fruit to get information.")
   else:
@@ -74,11 +74,11 @@ if streamlit.button('Get Fruit List'):
         my_cnx = snowflake.connector.connect(**streamlit.secrets["snowflake"])
         my_data_rows = get_fruit_load_list()
         my_cur = my_cnx.cursor()
-        my_cnx.close()
+        
 #my_cur.execute("SELECT * from fruit_load_list")
 #my_data_rows = my_cur.fetchall()
 #streamlit.header("The fruit load list contains")
-#streamlit.dataframe(my_data_rows)
+      streamlit.dataframe(my_data_rows)
 
 # Allow the end user to add a fruit to the list
 #streamlit.stop()
