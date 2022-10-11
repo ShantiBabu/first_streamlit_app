@@ -86,7 +86,7 @@ except URLError as e:
 
 def insert_row_snowflake(new_fruit):
       try:
-            #global my_cnx
+            global my_cnx
             with my_cnx.cursor() as my_cur:
                 my_cnx = snowflake.connector.connect(**streamlit.secrets["snowflake"])
                 my_cur = my_cnx.cursor()
