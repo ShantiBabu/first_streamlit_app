@@ -96,7 +96,7 @@ def insert_row_snowflake(new_fruit):
              # default error message
                   print(e)
       finally:
-                  mycur.close()
+                  mycnx.close()
 add_my_fruit = streamlit.text_input('What fruit would you like to add')
 #streamlit.write('Thanks for adding ', add_my_fruit)
 #if streamlit.button('Add a Fruit to the List'):
